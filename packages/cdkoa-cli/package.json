@@ -2,7 +2,7 @@
   "name": "cdkoa-cli",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "out/index.js",
   "bin": {
     "cdkoa": "out/index.js"
   },

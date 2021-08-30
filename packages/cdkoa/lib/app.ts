@@ -1,4 +1,4 @@
-import { Construct, ConstructOptions } from "constructs";
+import {  Construct, ConstructOptions, Node } from "constructs/lib/construct";
 
 export interface AppProps extends ConstructOptions {
 }
@@ -9,6 +9,9 @@ export class App extends Construct {
   }
 
   synth() {
-    console.log('hola');
+    debugger;
+    Node.of(this).synthesize({
+      outdir: "x"
+    });
   }
 }

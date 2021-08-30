@@ -1,4 +1,6 @@
-import { Construct, ConstructOptions } from "constructs";
+import { Construct, Node, ConstructOptions } from "constructs";
+import path from "path";
+import fs from "fs";
 import { Info } from "./info";
 import { Paths } from "./paths";
 
@@ -24,5 +26,11 @@ export class Document extends Construct implements IDocument {
     this.openapi = options.openapi;
     this.info = options.info;
     this.paths = options.paths;
+  }
+
+  onSynthesize(ctx: any) {
+    fs.writeFileSync(
+      path.join(process.cwd(), 'cdkoa.out', `${Node.of(this).id}.json`),
+      JSON.stringify(this, null, 2));
   }
 }

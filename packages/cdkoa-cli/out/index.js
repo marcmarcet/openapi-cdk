@@ -3,7 +3,7 @@
 require('yargs')
     .scriptName("cdkoa")
     .usage('$0 <cmd> [args]')
-    .command('hello [name]', 'welcome ter yargs!', function (yargs) {
+    .command('synth [name]', 'welcome ter yargs!', (yargs) => {
     yargs.positional('name', {
         type: 'string',
         default: 'Cambi',
