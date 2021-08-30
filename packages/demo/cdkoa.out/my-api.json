@@ -1,5 +1,10 @@
 {
-  "openapi": "3.0.0",
-  "info": null,
-  "paths": null
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Jobs API",
+    "summary": "This is the best api ever",
+    "description": "A slightly longer version of the description",
+    "version": "1.0.0"
+  },
+  "paths": {}
 }

@@ -9,7 +9,6 @@ export class App extends Construct {
   }
 
   synth() {
-    debugger;
     Node.of(this).synthesize({
       outdir: "x"
     });
