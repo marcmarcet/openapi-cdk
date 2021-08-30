@@ -1,13 +1,28 @@
+import { Construct, ConstructOptions } from "constructs";
 import { Info } from "./info";
 import { Paths } from "./paths";
 
-export interface Document {
+export interface DocumentProps extends ConstructOptions {
   openapi: string;
   info: Info;
-  //servers?: ServerObject[];
   paths: Paths;
-  //components?: ComponentsObject;
-  //security?: SecurityRequirementObject[];
-  //tags?: TagObject[];
-  //externalDocs?: ExternalDocumentationObject;
+}
+
+export interface IDocument {
+  openapi: string;
+  info: Info;
+  paths: Paths;
+}
+
+export class Document extends Construct implements IDocument {
+  openapi: string;
+  info: Info;
+  paths: Paths;
+
+  constructor(scope: Construct, id: string,  options: DocumentProps) {
+    super(scope, id, options);
+    this.openapi = options.openapi;
+    this.info = options.info;
+    this.paths = options.paths;
+  }
 }
