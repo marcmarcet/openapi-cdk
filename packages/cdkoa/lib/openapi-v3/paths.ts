@@ -8,6 +8,9 @@ export interface IPaths {
 export class Paths implements IPaths {
   [path: string]: IPathItem;
 
-  constructor(paths: PathsProps) {
+  constructor(props: PathsProps) {
+    Object.keys(props).forEach((path: string) => {
+      this[path] = props[path];
+    })
   }
 }

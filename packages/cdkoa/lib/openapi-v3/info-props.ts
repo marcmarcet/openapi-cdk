@@ -6,11 +6,6 @@ export interface InfoProps {
   title: string;
 
   /**
-   * A short summary of the API.
-   */
-  summary?: string;
-
-  /**
    * A description of the API. CommonMark syntax MAY be used for rich text representation.
    */
   description?: string;

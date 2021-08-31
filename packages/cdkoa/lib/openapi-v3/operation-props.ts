@@ -22,9 +22,9 @@ export interface OperationProps {
   /**
    * Declares this operation to be deprecated. Consumers SHOULD refrain from usage of the declared operation. Default value is false.
    */
-  deprecated: boolean;
+  deprecated?: boolean;
 
   security?: any;
 
-  servers: any;
+  servers?: any;
 }

@@ -13,7 +13,7 @@ require('yargs')
     });
 }, function (argv) {
     debugger;
-    (0, child_process_1.exec)(`npx ts-node --prefer-ts-exts ${process.cwd()}/index.ts`, (error, stdout, stderr) => {
+    (0, child_process_1.exec)(`npx ts-node --prefer-ts-exts ${process.cwd()}/bin/app.ts`, (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
             return;

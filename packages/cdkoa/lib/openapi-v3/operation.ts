@@ -1,5 +1,6 @@
 import { OperationProps } from "./operation-props";
 
+
 export interface IOperation {
   tags?: string[];
   summary?: string;
@@ -39,7 +40,7 @@ export class Operation implements IOperation {
     this.requestBody = props.requestBody;
     this.responses = props.responses;
     this.callbacks = props.callbacks;
-    this.deprecated = props.deprecated;
+    this.deprecated = props.deprecated ?? false;
     this.security = props.security;
     this.servers = props.servers;
   }
