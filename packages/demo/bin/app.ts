@@ -6,7 +6,6 @@ import petFindByStatus from '../lib/paths/pet-findByStatus';
 import petFindByTags from '../lib/paths/pet-findByTags';
 import petPetId from '../lib/paths/pet-petId';
 
-
 var app = new App({});
 
 new OpenApiV3.Document(app, 'my-api', {
