@@ -1,6 +1,6 @@
 import { ConstructOptions } from "constructs";
-import { IInfo } from "../info/info";
-import { IPaths } from "../paths/paths";
+import { IInfo } from "./info";
+import { IPaths } from "./paths";
 
 export interface DocumentProps extends ConstructOptions {
   /**

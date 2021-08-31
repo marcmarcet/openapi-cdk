@@ -1,22 +1,16 @@
 import path from "path";
 import fs from "fs";
 import { Construct, Node } from "constructs";
-import { IPaths } from "../paths/paths";
-import { DocumentProps } from "./document-props";
-import { IInfo } from "../info/info";
+import { DocumentProps } from ".";
+import { IInfo } from "./info";
+import { IPaths } from "./paths";
 
-/**
- *
- */
 export interface IDocument {
   openapi: string;
   info: IInfo;
   paths: IPaths;
 }
 
-/**
- *
- */
 export class Document extends Construct implements IDocument {
   openapi: string = "3.1.0";
   info: IInfo;

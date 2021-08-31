@@ -1,10 +1,10 @@
-export * from './document/document-props';
-export * from './document/document';
+export * from './document-props';
+export * from './document';
 
-export * from './info/info-props';
-export * from './info/info';
+export * from './info-props';
+export * from './info';
 
-export * from './paths/paths-props';
-export * from './paths/paths';
+export * from './paths-props';
+export * from './paths';
 
 

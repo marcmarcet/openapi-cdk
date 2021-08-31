@@ -1,8 +1,5 @@
 import { InfoProps } from "./info-props";
 
-/**
- *
- */
 export interface IInfo {
   title: string;
   summary?: string;
@@ -11,9 +8,6 @@ export interface IInfo {
   version: string;
 }
 
-/**
- *
- */
 export class Info implements IInfo {
   title: string;
   summary?: string;
