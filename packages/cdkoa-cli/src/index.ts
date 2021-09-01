@@ -1,32 +1,39 @@
 #!/usr/bin/env node
 
 import { exec } from "child_process";
+import server from "./lib/webpack-dev-server/server";
+
 
 require('yargs')
   .scriptName("cdkoa")
   .usage('$0 <cmd> [args]')
-  .command('synth [name]', 'welcome ter yargs!', (yargs: any) => {
-    yargs.positional('name', {
-      type: 'string',
-      default: 'Cambi',
-      describe: 'the name to say hello to'
+  .command(
+    'synth',
+    'welcome ter yargs!',
+    (yargs: any) => {
+    },
+    function (argv: any) {
+      exec(`npx ts-node --prefer-ts-exts ${process.cwd()}/bin/app.ts`, (error, stdout, stderr) => {
+        if (error) {
+          console.log(`error: ${error.message}`);
+          return;
+        }
+
+        if (stderr) {
+          console.log(`stderr: ${stderr}`);
+          return;
+        }
+
+        console.log(`stdout: ${stdout}`);
+      });
     })
-  }, function (argv: any) {
-    debugger;
-    exec(`npx ts-node --prefer-ts-exts ${process.cwd()}/bin/app.ts`, (error, stdout, stderr) => {
-      if (error) {
-        console.log(`error: ${error.message}`);
-        return;
-      }
-
-      if (stderr) {
-        console.log(`stderr: ${stderr}`);
-        return;
-      }
-
-      console.log(`stdout: ${stdout}`);
-    });
-
-  })
+  .command(
+    'preview',
+    'welcome ter yargs!',
+    (yargs: any) => {
+    },
+    function (argv: any) {
+      server.start();
+    })
   .help()
   .argv;
