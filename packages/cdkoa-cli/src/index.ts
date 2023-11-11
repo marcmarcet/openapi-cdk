@@ -12,20 +12,26 @@ require('yargs')
     'welcome ter yargs!',
     (yargs: any) => {
     },
-    function (argv: any) {
-      exec(`npx ts-node --prefer-ts-exts ${process.cwd()}/bin/app.ts`, (error, stdout, stderr) => {
-        if (error) {
-          console.log(`error: ${error.message}`);
-          return;
-        }
+    async function (argv: any) {
+      debugger;
+      let app = await import(`${process.cwd()}/../demo/bin/app.ts`);
+      //app();
+      debugger;
 
-        if (stderr) {
-          console.log(`stderr: ${stderr}`);
-          return;
-        }
 
-        console.log(`stdout: ${stdout}`);
-      });
+      // exec(`npx ts-node --prefer-ts-exts ${process.cwd()}/bin/app.ts`, (error, stdout, stderr) => {
+      //   if (error) {
+      //     console.log(`error: ${error.message}`);
+      //     return;
+      //   }
+      //
+      //   if (stderr) {
+      //     console.log(`stderr: ${stderr}`);
+      //     return;
+      //   }
+      //
+      //   console.log(`stdout: ${stdout}`);
+      // });
     })
   .command(
     'preview',

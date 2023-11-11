@@ -1,8 +1,8 @@
 import path from "path";
 
-const webpack = require('webpack');
-const WebpackDevServer = require('webpack-dev-server');
-const CopyPlugin = require("copy-webpack-plugin");
+import webpack, { Configuration } from 'webpack';
+import WebpackDevServer from 'webpack-dev-server';
+import CopyPlugin from "copy-webpack-plugin";
 
 const specPath = path.resolve(process.cwd(), "cdkoa.out", "my-api.yaml");
 
@@ -37,7 +37,7 @@ const config = {
     hot: true,
     inline: true
   },
-};
+} as Configuration;
 
 const compiler = webpack(config);
 

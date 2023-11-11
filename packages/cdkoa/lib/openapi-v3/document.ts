@@ -24,12 +24,14 @@ export class Document extends Construct implements IDocument {
     this.paths = props.paths;
   }
 
-  onSynthesize(ctx: any) {
+  onSynthesize(ctx: unknown) {
     let outfilePath = path.join(process.cwd(), 'cdkoa.out', `${Node.of(this).id}.yaml`);
 
     //let outfile = JSON.stringify(this, null, 2);
     let outfile = YAML.dump(this, {});
 
-    fs.writeFileSync(outfilePath, outfile, { flag: 'w' });
+    fs.promises.mkdir(path.join(process.cwd(), 'cdkoa.out'), {recursive: true}).then(() => {
+      return fs.promises.writeFile(outfilePath, outfile, {flag: 'w'})
+    });
   }
 }

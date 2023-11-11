@@ -1,0 +1,70 @@
+openapi: 3.0.3
+info:
+  title: Swagger Petstore 2 - OpenAPI 3.0
+  description: >-
+    This is a sample Pet Store Server based on the OpenAPI 3.0 specification. 
+    You can find out more about
+
+    Swagger at [http://swagger.io](http://swagger.io). In the third iteration of
+    the pet store, we've switched to the design first approach!
+
+    You can now help us improve the API whether it's by making changes to the
+    definition itself or to the code.
+
+    That way, with time, we can improve the API in general, and expose some of
+    the new features in OAS3.
+
+
+    Some useful links:
+
+    - [The Pet Store
+    repository](https://github.com/swagger-api/swagger-petstore)
+
+    - [The source API definition for the Pet
+    Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)
+  termsOfService: http://swagger.io/terms/
+  version: 1.0.6
+paths:
+  /pets:
+    summary: Pet endpoint
+    description: Pet endpoint
+    put:
+      tags:
+        - pet
+      summary: Update an existing pet
+      description: Update an existing pet by Id
+      operationId: updatePet
+      deprecated: false
+    post:
+      tags:
+        - pet
+      summary: Add a new pet to the store
+      description: Add a new pet to the store
+      operationId: addPet
+      deprecated: false
+  /pet/{petId}:
+    get:
+      tags:
+        - pet
+      summary: Find pet by ID
+      description: Returns a single pet
+      operationId: getPetById
+      deprecated: false
+  /pet/findByStatus:
+    get:
+      tags:
+        - pet
+      summary: Finds Pets by status
+      description: Multiple status values can be provided with comma separated strings
+      operationId: findPetsByStatus
+      deprecated: false
+  /pet/findByTags:
+    get:
+      tags:
+        - pet
+      summary: Finds Pets by tags
+      description: |-
+        Multiple tags can be provided with comma separated strings. Use tag1,
+        tag2, tag3 for testing.
+      operationId: findPetsByTags
+      deprecated: false
